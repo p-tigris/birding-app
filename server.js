@@ -28,8 +28,7 @@ app.use(session({
 }));
 
 app.get('/', (req, res) => {
-    // res.render('index.ejs');
-    res.send("Welcome to the Home Page!");
+    res.render('index.ejs');
 })
 
 app.listen(port, () => {
