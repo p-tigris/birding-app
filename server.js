@@ -8,6 +8,8 @@ const methodOverride = require('method-override');
 const morgan = require('morgan');
 const session = require('express-session');
 
+const authController = require('./controllers/auth.js');
+
 const port = process.env.PORT ? process.env.PORT : '3000';
 
 mongoose.connect(process.env.MONGODB_URI);
@@ -28,8 +30,13 @@ app.use(session({
 }));
 
 app.get('/', (req, res) => {
-    res.render('index.ejs');
+    res.render('index.ejs', {
+        user: req.session.user,
+    });
 })
+
+app.use('/auth', authController);
+
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
