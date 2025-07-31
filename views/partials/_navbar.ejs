@@ -1,7 +1,7 @@
 <nav>
     <a href="/">Home</a>
     <% if (user) { %>
-    <a href="">My Life List</a>
+    <a href="/users/<%= user._id %>/birds">My Profile</a>
     <a href="">The Flock</a>
     <a href="/auth/sign-out">Sign Out</a>
     <% } else { %>
