@@ -20,4 +20,21 @@ router.get('/new', (req, res) => {
     res.render('../views/birds/new.ejs');
 });
 
+router.post('/', async (req, res) => {
+    try {
+        req.body.seenBird = req.body.seenBird === 'on';
+
+        const currentUser = await User.findById(req.session.user._id);
+
+        currentUser.birds.push(req.body);
+
+        await currentUser.save();
+
+        res.redirect(`/users/${currentUser._id}/birds`);
+    } catch (error) {
+        console.log(error);
+        res.redirect('/');
+    }
+})
+
 module.exports = router;

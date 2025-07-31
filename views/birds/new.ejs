@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Add a Bird</h1>
-    <form action="" method="POST">
+    <form action="/users/<%= user._id %>/birds" method="POST">
         <label for="name">Name:</label>
         <input type="text" name="name" id="name" /><br><br>
         <label for="location">Location:</label>
@@ -17,7 +17,7 @@
         <label for="seenBird">Have you seen it?</label>
         <input type="checkbox" name="seenBird" id="seenBird" /><br><br>
         <label for="image">Image:</label>
-        <input type="url" name="name" id="name" /><br><br>
+        <input type="url" name="image" id="image" /><br><br>
         <label for="comments">Comments:</label>
         <textarea name="comments" id="comments" size="500"></textarea><br><br>
         <button type="submit">Add New Sighting</button>
