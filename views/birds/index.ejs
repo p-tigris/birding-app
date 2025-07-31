@@ -8,6 +8,7 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1><%= user.username %>'s Birds</h1>
+    <a href="/users/<%= user._id %>/birds/new">Add New Sighting</a>
 
     <% if (birds.length == 0) { %>
         <p>Your life list is empty.</p>
