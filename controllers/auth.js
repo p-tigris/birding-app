@@ -7,6 +7,15 @@ router.get('/sign-up', (req, res) => {
     res.render('../views/auth/sign-up.ejs');
 });
 
+router.get('/sign-in', (req, res) => {
+    res.render('../views/auth/sign-in.ejs');
+});
+
+router.get('/sign-out', (req, res) => {
+  req.session.destroy();
+  res.redirect('/');
+});
+
 router.post('/sign-up', async (req, res) => {
     const userInDatabase = await User.findOne({ username: req.body.username });
 
@@ -25,10 +34,6 @@ router.post('/sign-up', async (req, res) => {
 
     res.redirect('/');
 
-});
-
-router.get('/sign-in', (req, res) => {
-    res.render('../views/auth/sign-in.ejs');
 });
 
 router.post('/sign-in', async (req, res) => {
