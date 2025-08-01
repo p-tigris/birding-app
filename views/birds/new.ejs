@@ -6,6 +6,7 @@
     <title>Add a Bird</title>
 </head>
 <body>
+    <%- include('../partials/_navbar.ejs') %>
     <h1>Add a Bird</h1>
     <form action="/users/<%= user._id %>/birds" method="POST">
         <label for="name">Name:</label>

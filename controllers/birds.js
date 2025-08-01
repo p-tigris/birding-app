@@ -35,6 +35,18 @@ router.post('/', async (req, res) => {
         console.log(error);
         res.redirect('/');
     }
-})
+});
+
+router.get('/:birdId', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+        const selectedBird = currentUser.birds.id(req.params.birdId);
+
+        res.render('../views/birds/show.ejs', { bird: selectedBird });
+    } catch (error) {
+        console.log(error);
+        res.redirect('/');
+    }
+});
 
 module.exports = router;

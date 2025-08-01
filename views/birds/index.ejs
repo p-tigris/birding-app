@@ -15,7 +15,7 @@
     <% } else { %>
         <ul>
         <% birds.forEach((bird) => { %>
-            <li><%= bird.name %></li>
+            <li><a href="/users/<%= user._id %>/birds/<%= bird._id %>"><%= bird.name %></a></li>
         <% }) %>
         </ul>
     <% } %>

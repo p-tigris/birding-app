@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= bird.name %></title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1><%= bird.name %></h1>
+    <%= bird.image %>
+    <%= bird.location %>
+    <p><%= bird.seenBird === true ? "Seen" : "Attempt" %> on <%= bird.date %></p>
+    <%= bird.comments %>
+</body>
+</html>
