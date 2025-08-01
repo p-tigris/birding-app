@@ -13,6 +13,7 @@ const passUserToView = require('./middleware/pass-user-to-view.js');
 
 const authController = require('./controllers/auth.js');
 const birdsController = require('./controllers/birds.js');
+const flockController = require('./controllers/flock.js');
 
 const port = process.env.PORT ? process.env.PORT : '3000';
 
@@ -38,12 +39,13 @@ app.get('/', (req, res) => {
     res.render('index.ejs', {
         user: req.session.user,
     });
-})
+});
 
 app.use(passUserToView);
 app.use('/auth', authController);
 app.use(isSignedIn);
 app.use('/users/:userId/birds', birdsController);
+app.use('/theflock', flockController);
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);
