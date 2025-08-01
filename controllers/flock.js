@@ -16,4 +16,17 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/:userId', async (req, res) => {
+    try {
+        const selectedUser = await User.findById(req.params.userId);
+        res.locals.user = selectedUser;
+        res.locals.birds = selectedUser.birds;
+
+        res.render('../views/flock/list.ejs');
+    } catch (error) {
+        console.log(error);
+        res.redirect('/');
+    }
+})
+
 module.exports = router;

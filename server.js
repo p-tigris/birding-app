@@ -45,7 +45,7 @@ app.use(passUserToView);
 app.use('/auth', authController);
 app.use(isSignedIn);
 app.use('/users/:userId/birds', birdsController);
-app.use('/theflock', flockController);
+app.use('/the-flock', flockController);
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);

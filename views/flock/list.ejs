@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= user.username %>'s Bird List</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Birds that <%= user.username %> has seen or attempted:</h1>
+
+    <% if (birds.length === 0) { %>
+        <p>This user does not have any items in their pantry yet.</p>
+    <% } else { %>
+            <ul>
+            <% birds.forEach((bird) => { %>
+                <li><%= bird.name %></li>
+            <% }) %>
+            </ul>
+        </div>
+    <% } %>
+
+</body>
+</html>
