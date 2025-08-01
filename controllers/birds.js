@@ -77,7 +77,7 @@ router.get('/:birdId/edit', async (req, res) => {
 
 router.put('/:birdId/', async (req, res) => {
     try {
-        res.locals.seenBird = res.locals.seenBird === 'on';
+        req.body.seenBird = req.body.seenBird === 'on';
         const currentUser = await User.findById(req.session.user._id);
         
         currentUser.birds.id(req.params.birdId).set(req.body);

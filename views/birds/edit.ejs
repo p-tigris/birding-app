@@ -15,7 +15,7 @@
         <label for="date">Date:</label>
         <input type="date" name="date" id="date" value="<%= bird.date %>"/><br><br>
         <label for="seenBird">Have you seen it?</label>
-        <input type="checkbox" name="seenBird" id="seenBird" value="<%= bird.seenBird %>"/><br><br>
+        <input type="checkbox" name="seenBird" id="seenBird" <%= bird.seenBird ? 'checked' : '' %>/><br><br>
         <label for="image">Image:</label>
         <input type="url" name="image" id="image" value="<%= bird.image %>"/><br><br>
         <label for="comments">Comments:</label>
