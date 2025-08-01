@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit <%= bird.name %></title>
+</head>
+<body>
+    <h1>Edit <%= bird.name %></h1>
+    <form action="/users/<%= user._id %>/birds/<%= bird._id %>" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="<%= bird.name %>"/><br><br>
+        <label for="location">Location:</label>
+        <input type="text" name="location" id="location" value="<%= bird.location %>"/><br><br>
+        <label for="date">Date:</label>
+        <input type="date" name="date" id="date" value="<%= bird.date %>"/><br><br>
+        <label for="seenBird">Have you seen it?</label>
+        <input type="checkbox" name="seenBird" id="seenBird" value="<%= bird.seenBird %>"/><br><br>
+        <label for="image">Image:</label>
+        <input type="url" name="image" id="image" value="<%= bird.image %>"/><br><br>
+        <label for="comments">Comments:</label>
+        <textarea name="comments" id="comments" size="500" value="<%= bird.comments %>"></textarea><br><br>
+        <button type="submit">Edit this Bird!</button>
+    </form>
+</body>
+</html>

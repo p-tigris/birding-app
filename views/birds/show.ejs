@@ -13,6 +13,7 @@
     <p><%= bird.seenBird === true ? "Seen" : "Attempt" %> on <%= bird.date %></p>
     <%= bird.comments %>
 
+    <a href="/users/<%= user._id %>/birds/<%= bird._id %>/edit">Edit this Bird</a><br><br>
     <form action="/users/<%= user._id %>/birds/<%= bird._id %>?_method=DELETE" method="POST">
         <button type="submit">Delete this <%= bird.seenBird === true ? "Sighting" : "Attempt" %></button>
     </form>

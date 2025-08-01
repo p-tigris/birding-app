@@ -63,4 +63,16 @@ router.delete('/:birdId', async (req, res) => {
     }
 });
 
+router.get('/:birdId/edit', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+        res.locals.bird = currentUser.birds.id(req.params.birdId);
+
+        res.render('../views/birds/edit.ejs');
+    } catch (error) {
+        console.log(error);
+        res.redirect('/');
+    }
+});
+
 module.exports = router;
