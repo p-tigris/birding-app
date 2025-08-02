@@ -13,13 +13,13 @@
         <label for="location">Location:</label>
         <input type="text" name="location" id="location" value="<%= bird.location %>"/><br><br>
         <label for="date">Date:</label>
-        <input type="date" name="date" id="date" value="<%= bird.date %>"/><br><br>
-        <label for="seenBird">Have you seen it?</label>
+        <input type="date" name="date" id="date" value="<%= bird.date.toISOString().split('T')[0] %>"/><br><br>
+        <label for="seenBird">I have seen this bird</label>
         <input type="checkbox" name="seenBird" id="seenBird" <%= bird.seenBird ? 'checked' : '' %>/><br><br>
-        <label for="image">Image:</label>
+        <label for="image">Image:</label> <small>(Must be URL with .png, .gif, .jpg or .jpeg extension)</small><br>
         <input type="url" name="image" id="image" value="<%= bird.image %>"/><br><br>
-        <label for="comments">Comments:</label>
-        <textarea name="comments" id="comments" size="500" value="<%= bird.comments %>"></textarea><br><br>
+        <label for="comments">Comments: </label> <small>(Max. 1500 characters)</small><br>
+        <textarea name="comments" id="comments" rows="10" cols="80" maxlength="1500"><%= bird.comments %></textarea><br><br>
         <button type="submit">Edit this Bird!</button>
     </form>
 </body>
