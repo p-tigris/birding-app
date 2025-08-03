@@ -8,7 +8,7 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1><%= bird.name %></h1>
-    <img src='<%= bird.image %>' alt="Bird Image" height="300" width="400"><br>
+    <img src="<%= bird.image ? bird.image : 'https://i.imgur.com/ugbGQvi.jpeg' %>" alt="Bird Image" height="300" width="400"><br>
     <p><%= bird.seenBird === true ? "Seen" : "Attempt" %> on <%= bird.date.toISOString().split('T')[0] %> in <%= bird.location %></p>
     <%= bird.comments %><br><br>
 

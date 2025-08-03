@@ -7,7 +7,16 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1><%= user.username %>'s Birds</h1>
+    <h1><%= user.username %></h1>
+    <% let totalSeen = 0 %>
+    <% birds.forEach((bird) => { %>
+        <% if (bird.seenBird) { %>
+            <% totalSeen++ %>
+        <% } %>
+    <% }) %>
+    <% user.rank = totalSeen >= 100 ? 5 : totalSeen >= 50 ? 4 : totalSeen >= 25 ? 3 : totalSeen >= 10 ? 2 : totalSeen >= 1 ? 1 : 0 %>
+    <h2><%= user.rank === 5 ? 'Rank 5: Lifer-timer' : user.rank === 4 ? 'Rank 4: Mid-Lifer' : user.rank === 3 ? 'Rank 3: Lifer Finder' : user.rank === 2 ? 'Rank 2: Lifer Seeker' : user.rank === 1 ? 'Rank 1: New Lifer' : 'Rank 0: No-Lifer' %></h2>
+    <h2><%= user.username %>'s Birds</h1>
     <a href="/users/<%= user._id %>/birds/new">Add New Sighting</a>
 
     <% if (birds.length == 0) { %>

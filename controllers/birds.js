@@ -84,7 +84,7 @@ router.put('/:birdId/', async (req, res) => {
 
         await currentUser.save();
 
-        res.redirect(`/users/${currentUser._id}/birds`);
+        res.redirect(`/users/${currentUser._id}/birds/${req.params.birdId}`);
     } catch (error) {
         console.log(error);
         res.redirect('/');

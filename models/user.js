@@ -28,6 +28,7 @@ const userSchema = new mongoose.Schema({
         required: true,
     },
     birds: [birdSchema],
+    rank: Number,
 })
 
 const User = mongoose.model('User', userSchema);
