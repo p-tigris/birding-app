@@ -15,6 +15,7 @@ const birdSchema = new mongoose.Schema({
     },
     seenBird: Boolean,
     image: String,
+    rating: String,
     comments: String,
 })
 

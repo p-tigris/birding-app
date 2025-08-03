@@ -19,8 +19,23 @@
         <input type="checkbox" name="seenBird" id="seenBird" <%= bird.seenBird ? 'checked' : '' %>/><br><br>
         <label for="image">Image:</label> <small>(Must be URL with .png, .gif, .jpg or .jpeg extension)</small><br>
         <input type="url" name="image" id="image" value="<%= bird.image %>"/><br><br>
-        <label for="comments">Comments: </label> <small>(Max. 1500 characters)</small><br>
-        <textarea name="comments" id="comments" rows="10" cols="80" maxlength="1500"><%= bird.comments %></textarea><br><br>
+        <label for="rating">How would you rate this Sighting?:</label>
+        <select name="rating" id="rating">
+            <option value="blank" <%= bird.rating === 'blank' ? 'selected' : '' %>></option>
+            <option value="5" <%= bird.rating === '5' ? 'selected' : '' %>>5 Stars</option>
+            <option value="4.5" <%= bird.rating === '4.5' ? 'selected' : '' %>>4.5 Stars</option>
+            <option value="4" <%= bird.rating === '4' ? 'selected' : '' %>>4 Stars</option>
+            <option value="3.5" <%= bird.rating === '3.5' ? 'selected' : '' %>>3.5 Stars</option>
+            <option value="3" <%= bird.rating === '3' ? 'selected' : '' %>>3 Stars</option>
+            <option value="2.5" <%= bird.rating === '2.5' ? 'selected' : '' %>>2.5 Stars</option>
+            <option value="2" <%= bird.rating === '2' ? 'selected' : '' %>>2 Stars</option>
+            <option value="1.5" <%= bird.rating === '1.5' ? 'selected' : '' %>>1.5 Stars</option>
+            <option value="1" <%= bird.rating === '1' ? 'selected' : '' %>>1 Stars</option>
+            <option value="0.5" <%= bird.rating === '0.5' ? 'selected' : '' %>>0.5 Stars</option>
+            <option value="0" <%= bird.rating === '0' ? 'selected' : '' %>>0 Stars</option>
+        </select><br><br>
+        <label for="comments">Comments: </label> <small>(Max. 800 characters)</small><br>
+        <textarea name="comments" id="comments" rows="10" cols="80" maxlength="800"><%= bird.comments %></textarea><br><br>
         <button type="submit">Edit this Bird!</button>
     </form>
 </body>

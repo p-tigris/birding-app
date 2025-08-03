@@ -19,8 +19,23 @@
         <input type="checkbox" name="seenBird" id="seenBird" /><br><br>
         <label for="image">Image:</label> <small>(Must be URL with .png, .gif, .jpg or .jpeg extension)</small><br>
         <input type="url" name="image" id="image" /><br><br>
-        <label for="comments">Comments:</label> <small>(Max. 1500 characters)</small><br>
-        <textarea name="comments" id="comments" rows="10" cols="80" maxlength="1500"></textarea><br><br>
+        <label for="rating">How would you rate this Sighting?:</label>
+        <select name="rating" id="rating">
+            <option value="blank"></option>
+            <option value="5">5 Stars</option>
+            <option value="4.5">4.5 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="3.5">3.5 Stars</option>
+            <option value="3">3 Stars</option>
+            <option value="2.5">2.5 Stars</option>
+            <option value="2">2 Stars</option>
+            <option value="1.5">1.5 Stars</option>
+            <option value="1">1 Stars</option>
+            <option value="0.5">0.5 Stars</option>
+            <option value="0">0 Stars</option>
+        </select><br><br>
+        <label for="comments">Comments:</label> <small>(Max. 800 characters)</small><br>
+        <textarea name="comments" id="comments" rows="10" cols="80" maxlength="800"></textarea><br><br>
         <button type="submit">Add New Sighting</button>
     </form>
 </body>
