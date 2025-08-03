@@ -14,6 +14,7 @@ const passUserToView = require('./middleware/pass-user-to-view.js');
 const authController = require('./controllers/auth.js');
 const birdsController = require('./controllers/birds.js');
 const flockController = require('./controllers/flock.js');
+const userController = require('./controllers/user.js');
 
 const port = process.env.PORT ? process.env.PORT : '3000';
 
@@ -46,6 +47,7 @@ app.use('/auth', authController);
 app.use(isSignedIn);
 app.use('/users/:userId/birds', birdsController);
 app.use('/the-flock', flockController);
+app.use('/users/:userId', userController);
 
 app.listen(port, () => {
     console.log(`Listening on port ${port}`);

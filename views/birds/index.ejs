@@ -8,8 +8,8 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <br>
-    <img src="<%= user.image || 'https://i.imgur.com/hwkvllO.jpeg'%>" width="50" height ="50" alt="Profile Picture"><h1><%= user.username %></h1>
-    <a href="/users/<%= user._id %>/birds/profile-pic"><small>(Change Profile Picture)</small></a>
+    <img src="<%= user.image %>" width="50" height ="50" alt="Profile Picture"><h1><%= user.username %></h1>
+    <a href="/users/<%= user._id %>/profile-pic"><small>(Change Profile Picture)</small></a>
     <% let totalSeen = 0 %>
     <% birds.forEach((bird) => { %>
         <% if (bird.seenBird) { %>
