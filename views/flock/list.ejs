@@ -14,7 +14,14 @@
     <% } else { %>
             <ul>
             <% birds.forEach((bird) => { %>
-                <li><%= bird.name %></li>
+                <li>
+                    <%= bird.name %><br>
+                    <% if (bird.image) { %>
+                        <img src="<%= bird.image %>" alt="Bird Image" width="400" height="300">
+                    <% } %>
+                    <p><%= bird.seenBird === true ? "Seen" : "Attempt" %> on <%= bird.date.toISOString().split('T')[0] %> in <%= bird.location %></p>
+                    <%= bird.comments %><br><br>
+                </li>
             <% }) %>
             </ul>
         </div>
