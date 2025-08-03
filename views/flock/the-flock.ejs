@@ -10,7 +10,7 @@
     <h1>Take a look at our other users and their life lists!</h1>
     <ul>
         <% users.forEach((user) => { %>
-            <li><p><a href="the-flock/<%= user._id %>"><%= user.username %></a></p></li>
+            <li><img src="<%= user.image %>" width="50" height ="50" alt="Profile Picture"><p><a href="the-flock/<%= user._id %>"><%= user.username %></a></p></li>
         <% }) %>
     </ul>
 </body>

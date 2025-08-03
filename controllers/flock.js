@@ -5,9 +5,9 @@ const User = require('../models/user.js');
 
 router.get('/', async (req, res) => {
     try {
-        const foundUsers = await User.find({});
+        const otherUsers = await User.find({ _id: { $ne: req.session.user._id}})
 
-        res.locals.users = foundUsers;
+        res.locals.users = otherUsers;
 
         res.render('../views/flock/the-flock.ejs');
     } catch (error) {
