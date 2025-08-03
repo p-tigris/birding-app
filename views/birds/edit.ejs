@@ -6,6 +6,7 @@
     <title>Edit <%= bird.name %></title>
 </head>
 <body>
+    <%- include('../partials/_navbar.ejs') %>
     <h1>Edit <%= bird.name %></h1>
     <form action="/users/<%= user._id %>/birds/<%= bird._id %>?_method=PUT" method="POST">
         <label for="name">Name:</label>

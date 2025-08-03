@@ -29,6 +29,10 @@ const userSchema = new mongoose.Schema({
     },
     birds: [birdSchema],
     rank: Number,
+    image: {
+        type: String,
+        default: 'https://i.imgur.com/hwkvllO.jpeg', 
+    }
 })
 
 const User = mongoose.model('User', userSchema);

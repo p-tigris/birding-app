@@ -37,6 +37,31 @@ router.post('/', async (req, res) => {
     }
 });
 
+router.get('/profile-pic', async (req, res) => {
+    try {
+        res.render('../views/birds/profile-pic.ejs');
+    } catch (error) {
+        console.log(error);
+        res.redirect('/');
+    }
+})
+
+router.put('/profile-pic', async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+
+        currentUser.image = req.body.profilePic;
+        res.locals.user.image = currentUser.image;
+
+        await currentUser.save();
+
+        res.redirect(`/users/${currentUser._id}/birds`);
+    } catch (error) {
+        console.log(error);
+        res.redirect('/');
+    }
+})
+
 router.get('/:birdId', async (req, res) => {
     try {
         const currentUser = await User.findById(req.session.user._id);

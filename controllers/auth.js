@@ -51,6 +51,7 @@ router.post('/sign-in', async (req, res) => {
 
     req.session.user = {
         username: userInDatabase.username,
+        image: userInDatabase.image,
         _id: userInDatabase._id
     }
 

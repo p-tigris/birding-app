@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Profile Picture</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <br>
+    <form action="/users/<%= user._id %>/birds/profile-pic?_method=PUT" method="POST">
+        <label for="profilePic">Image:</label> <small>(Must be URL with .png, .gif, .jpg or .jpeg extension)</small><br>
+        <input type="text" name="profilePic" id="profilePic">
+        <button type="submit">Update Profile Picture</button>
+    </form>
+</body>
+</html>
