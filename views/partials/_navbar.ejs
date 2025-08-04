@@ -1,12 +1,15 @@
+<link rel="stylesheet" href="/stylesheets/partials.css" />
 <nav>
-    <a href="/">Home</a>
-    <% if (user) { %>
-    <a href="/users/<%= user._id %>/birds">My Profile</a>
-    <a href="/the-flock">The Flock</a>
-    <a href="/our-birds">Our Birds</a>
-    <a href="/auth/sign-out">Sign Out</a>
-    <% } else { %>
-    <a href="/auth/sign-in">Sign In</a>
-    <a href="/auth/sign-up">Sign Up</a>
-    <% } %>
+    <a href="/" id="home-button">Ubird</a>
+    <div id="functions">
+        <% if (user) { %>
+        <a href="/users/<%= user._id %>/birds">My Profile</a>
+        <a href="/the-flock">The Flock</a>
+        <a href="/our-birds">Our Birds</a>
+        <a href="/auth/sign-out">Sign Out</a>
+        <% } else { %>
+        <a href="/auth/sign-in">Sign In</a>
+        <a href="/auth/sign-up" id="sign-up">Sign Up</a>
+        <% } %>
+    </div>
 </nav>

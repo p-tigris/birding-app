@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Add a Bird</title>
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
+    <div class="page-body">
     <h1>Add a Bird</h1>
     <form action="/users/<%= user._id %>/birds" method="POST">
         <label for="name">Name:</label>
@@ -38,5 +40,6 @@
         <textarea name="comments" id="comments" rows="10" cols="80" maxlength="800"></textarea><br><br>
         <button type="submit">Add New Sighting</button>
     </form>
+    </div>
 </body>
 </html>

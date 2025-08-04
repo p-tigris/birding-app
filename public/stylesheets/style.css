@@ -1,0 +1,137 @@
+@import url('https://fonts.cdnfonts.com/css/uber-move-text');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+    background-image: url('../images/21200703.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+
+#home-page {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+}
+
+#welcome {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+    margin-top: -250px;
+}
+
+#app-name {
+    font-family: 'Uber Move Text', 'Courier New', Courier, monospace;
+    font-size: 240px;
+    color: black;
+    opacity: 0;
+    animation: fadeInRight 2s forwards;
+}
+
+@keyframes fadeInRight {
+    from {
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+.page-body {
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main-page {
+    opacity: 0;
+    animation: revealContent 1s forwards;
+    animation-delay: 1.5s;
+    position: relative;
+}
+
+@keyframes revealContent {
+    to {
+        opacity: 1;
+    }
+}
+
+.credentials {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+img {
+    border: none;
+    border-radius: 10px;
+}
+
+.user-data, .rest-of-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+    background-color: rgba(181, 247, 255, 0.7);
+    width: 20%;
+    border: none;
+    border-radius: 20px;
+}
+
+.user-data {
+    margin-top: 0;
+    background-color: rgba(181, 247, 255, 0.7);
+}
+
+.rest-of-profile {
+    margin-top: 20px;
+    background-color: rgba(217, 224, 159, 0.7);
+}
+
+.username-and-pic {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#user-list {
+    margin: 10px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.flying-birds {
+    animation: flyRight 3s forwards;
+    position: fixed;
+    top: 100px;
+    left: 0px;
+    z-index: 2;
+}
+
+@keyframes flyRight {
+    from {
+        transform: translateX(0px);
+    }
+    to {
+        transform: translateX(80vw);
+    }
+    
+}
+
+hr {
+    border: groove;
+    width: 500px;
+}

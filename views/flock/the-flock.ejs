@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>The Flock</title>
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Take a look at our other users and their life lists!</h1>
-    <ul>
-        <% users.forEach((user) => { %>
-            <li><img src="<%= user.image %>" width="50" height ="50" alt="Profile Picture"><p><a href="the-flock/<%= user._id %>"><%= user.username %></a></p></li>
-        <% }) %>
-    </ul>
+    <img src="/images/birds-flying3.png" width="200" height="200" alt="Birds Flying" class="flying-birds">
+    <div class="page-body main-page">
+        <h1>Take a look at our other users and their life lists!</h1>
+        <ul>
+            <% users.forEach((user) => { %>
+                <li class="username-and-pic" id="user-list"><img src="<%= user.image %>" width="50" height ="50" alt="Profile Picture"><p><a href="the-flock/<%= user._id %>"><%= user.username %></a></p></li>
+                <% }) %>
+        </ul>
+    </div>
 </body>
 </html>

@@ -3,25 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Document</title>
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Our Bird Database</h1>
-    <% birdDB.forEach((species) => { %>
-        <% let populated = false %>
-        <h2><%= species %></h2>
-        <% users.forEach((user) => { %>
-            <% user.birds.forEach((bird) => { %>
-                <% if (bird.name.toLowerCase() === species.toLowerCase()) { %>
-                    <% populated = true %>
-                    <p>Seen or attempted by <%= user.username %> at <%= bird.location %> on <%= bird.date.toISOString().split('T')[0] %></p>
-                <% } %>
+    <img src="/images/birds-flying2.png" width="200" height="200" alt="Birds Flying" class="flying-birds">
+    <div class="page-body main-page">
+        <h1>Our Bird Database</h1>
+        <% birdDB.forEach((species) => { %>
+            <% let populated = false %>
+            <h2><%= species %></h2>
+            <% users.forEach((user) => { %>
+                <% user.birds.forEach((bird) => { %>
+                    <% if (bird.name.toLowerCase() === species.toLowerCase()) { %>
+                        <% populated = true %>
+                        <p>Seen or attempted by <a href="the-flock/<%= user._id %>"><%= user.username %></a> at <%= bird.location %> on <%= bird.date.toISOString().split('T')[0] %></p>
+                    <% } %>
+                <% }) %>
             <% }) %>
+            <% if (!populated) { %>
+                <p>No sightings or attempts yet.</p>
+            <% } %>
+            <hr>
         <% }) %>
-        <% if (!populated) { %>
-            <p>No sightings or attempts yet.</p>
-        <% } %>
-    <% }) %>
+    </div>
 </body>
 </html>

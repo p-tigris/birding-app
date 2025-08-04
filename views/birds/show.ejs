@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title><%= bird.name %></title>
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1><%= bird.name %></h1>
-    <img src="<%= bird.image ? bird.image : 'https://i.imgur.com/ugbGQvi.jpeg' %>" alt="Bird Image" height="300" width="400"><br>
-    <p><%= bird.seenBird === true ? "Seen" : "Attempt" %> on <%= bird.date.toISOString().split('T')[0] %> in <%= bird.location %></p>
-    <% if (bird.rating !== 'blank') { %>
-        <p><%= bird.rating %> Stars</p> 
-    <% } %>
-    <%= bird.comments %><br><br>
+    <div class="page-body">
+        <h1><%= bird.name %></h1>
+        <img src="<%= bird.image ? bird.image : '/images/default-bird.jpeg' %>" alt="Bird Image" height="300" width="400"><br>
+        <p><%= bird.seenBird === true ? "Seen" : "Attempt" %> on <%= bird.date.toISOString().split('T')[0] %> in <%= bird.location %></p>
+        <% if (bird.rating !== 'blank') { %>
+            <p><%= bird.rating %> Stars</p> 
+        <% } %>
+        <%= bird.comments %><br><br>
 
-    <a href="/users/<%= user._id %>/birds/<%= bird._id %>/edit">Edit this Bird</a><br><br>
-    <form action="/users/<%= user._id %>/birds/<%= bird._id %>?_method=DELETE" method="POST">
-        <button type="submit">Delete this <%= bird.seenBird === true ? "Sighting" : "Attempt" %></button>
-    </form>
+        <a href="/users/<%= user._id %>/birds/<%= bird._id %>/edit">Edit this Bird</a><br><br>
+        <form action="/users/<%= user._id %>/birds/<%= bird._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete this <%= bird.seenBird === true ? "Sighting" : "Attempt" %></button>
+        </form>
+    </div>
 </body>
 </html>

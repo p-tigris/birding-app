@@ -3,29 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title><%= user.username %>'s Bird List</title>
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Birds that <%= user.username %> has seen or attempted:</h1>
+    <div class="page-body">
+        <h1>Birds that <%= user.username %> has seen or attempted:</h1>
 
-    <% if (birds.length === 0) { %>
-        <p>This user does not have any items in their pantry yet.</p>
-    <% } else { %>
-            <ul>
-            <% birds.forEach((bird) => { %>
-                <li>
-                    <%= bird.name %><br>
-                    <% if (bird.image) { %>
-                        <img src="<%= bird.image %>" alt="Bird Image" width="400" height="300">
-                    <% } %>
-                    <p><%= bird.seenBird === true ? "Seen" : "Attempt" %> on <%= bird.date.toISOString().split('T')[0] %> in <%= bird.location %></p>
-                    <%= bird.comments %><br><br>
-                </li>
-            <% }) %>
-            </ul>
-        </div>
-    <% } %>
-
+        <% if (birds.length === 0) { %>
+            <p>This user does not have any birds on their list yet.</p>
+        <% } else { %>
+                <ul>
+                <% birds.forEach((bird) => { %>
+                    <li>
+                        <%= bird.name %><br>
+                        <% if (bird.image) { %>
+                            <img src="<%= bird.image %>" alt="Bird Image" width="400" height="300">
+                        <% } %>
+                        <p><%= bird.seenBird === true ? "Seen" : "Attempt" %> on <%= bird.date.toISOString().split('T')[0] %> in <%= bird.location %></p>
+                        <%= bird.comments %><br><br>
+                    </li>
+                    <hr>
+                <% }) %>
+                </ul>
+            </div>
+        <% } %>
+    </div>
 </body>
 </html>

@@ -33,7 +33,7 @@ router.delete('/profile-pic', async (req, res) => {
         const currentUser = await User.findById(req.session.user._id);
         currentUser.image.delete;
 
-        currentUser.image = 'https://i.imgur.com/hwkvllO.jpeg';
+        currentUser.image = '/images/default-profile-pic.jpeg';
         req.session.user.image = currentUser.image;
 
         await currentUser.save();
