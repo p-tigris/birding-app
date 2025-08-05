@@ -32,7 +32,7 @@ const userSchema = new mongoose.Schema({
     rank: Number,
     image: {
         type: String,
-        default: 'https://i.imgur.com/hwkvllO.jpeg', 
+        default: '/images/default-profile-pic.jpeg', 
     }
 })
 

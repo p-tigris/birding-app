@@ -20,7 +20,7 @@
             <label for="seenBird">I have seen this bird</label>
             <input type="checkbox" name="seenBird" id="seenBird" /><br><br>
             <label for="image">Image:</label> <small>(Must be URL with .png, .gif, .jpg or .jpeg extension)</small><br>
-            <input type="url" name="image" id="image" /><br><br>
+            <input type="url" name="image" id="image" pattern="\.(png|jpg|jpeg|gif)$"/><br><br>
             <label for="rating">How would you rate this Sighting?:</label>
             <select name="rating" id="rating">
                 <option value="blank"></option>

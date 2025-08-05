@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 
 const User = require('../models/user.js');
-const birdData = require('../data/bird-data.js');
 
 router.get('/', async (req, res) => {
     try {
