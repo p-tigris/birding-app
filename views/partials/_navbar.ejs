@@ -1,14 +1,16 @@
 <link rel="stylesheet" href="/stylesheets/partials.css" />
 <nav>
-    <a href="/" id="home-button">Ubird</a>
+    <div id="home-container">
+        <a href="/" id="home-button">Ubird</a>
+    </div>
     <div id="functions">
         <% if (user) { %>
-        <a href="/users/<%= user._id %>/birds">My Profile</a>
-        <a href="/the-flock">The Flock</a>
-        <a href="/our-birds">Our Birds</a>
-        <a href="/auth/sign-out">Sign Out</a>
+        <a href="/users/<%= user._id %>/birds" class="white-link">My Profile</a>
+        <a href="/the-flock" class="white-link">The Flock</a>
+        <a href="/our-birds" class="white-link">Our Birds</a>
+        <a href="/auth/sign-out" class="white-link">Sign Out</a>
         <% } else { %>
-        <a href="/auth/sign-in">Sign In</a>
+        <a href="/auth/sign-in" class="white-link">Sign In</a>
         <a href="/auth/sign-up" id="sign-up">Sign Up</a>
         <% } %>
     </div>

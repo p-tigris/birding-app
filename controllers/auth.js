@@ -18,9 +18,14 @@ router.get('/sign-out', (req, res) => {
 
 router.post('/sign-up', async (req, res) => {
     const userInDatabase = await User.findOne({ username: req.body.username });
+    const passwordRegex = /^(?=.*\d).{8,}$/;
 
     if (userInDatabase) {
         return res.send('Username already taken');
+    }
+
+    if (!passwordRegex.test(req.body.password)) {
+        return res.send('Password must be at least 8 characters long and contain at least one digit');
     }
 
     if (req.body.password !== req.body.confirmPassword) {

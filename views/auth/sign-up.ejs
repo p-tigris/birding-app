@@ -9,14 +9,14 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <div class="page-body accounts-page">
-        <h1>Create an Account</h1>
+        <h1 class="page-title">Create an Account</h1>
         <form action="/auth/sign-up" method="POST" class="credentials">
-            <label for="username">Username:</label>
-            <input type="text" name="username" id="username" />
-            <label for="password">Password:</label>
-            <input type="password" name="password" id="password" />
+            <label for="username">Username:</label> <small>(Max. 8 chars)</small>
+            <input type="text" name="username" id="username" maxlength="8" required/>
+            <label for="password">Password:</label> <small>(Min. 8 chars, 1 digit)</small>
+            <input type="password" name="password" id="password" pattern="(?=.*\d).{8,}" required/>
             <label for="confirmPassword">Confirm Password:</label>
-            <input type="password" name="confirmPassword" id="confirmPassword" />
+            <input type="password" name="confirmPassword" id="confirmPassword" required/>
             <button type="submit" class="accounts-button">Create Account</button>
         </form>
     </div>
