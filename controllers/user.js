@@ -15,6 +15,11 @@ router.get('/profile-pic', async (req, res) => {
 router.put('/profile-pic', async (req, res) => {
     try {
         const currentUser = await User.findById(req.session.user._id);
+        const profilePicRegex = /^https?:\/\/.*\.(png|jpg|jpeg|gif)$/i;
+
+        if (!profilePicRegex.test(req.body.profilePic)) {
+            return res.send("Invalid URL");
+        }
 
         currentUser.image = req.body.profilePic;
         res.locals.user.image = currentUser.image;
