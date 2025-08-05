@@ -12,12 +12,10 @@
     <img src="/images/birds-flying.png" width="300" height="300" alt="Birds Flying" class="flying-birds">
     <div class="page-body main-page">
         <div class="user-data">
+            <a href="/users/<%= user._id %>/profile-pic"><small>(Change Profile Picture)</small></a>
             <div class="username-and-pic">
                 <img src="<%= user.image %>" width="130" height ="130" alt="Profile Picture"><h1><%= user.username %></h1>
-            </div>
-            <div>        
-                <a href="/users/<%= user._id %>/profile-pic"><small>(Change Profile Picture)</small></a>
-            </div>
+            </div>       
             <% let totalSeen = 0 %>
             <% birds.forEach((bird) => { %>
                 <% if (bird.seenBird) { %>
@@ -25,7 +23,7 @@
                 <% } %>
             <% }) %>
             <% user.rank = totalSeen >= 100 ? 5 : totalSeen >= 50 ? 4 : totalSeen >= 25 ? 3 : totalSeen >= 10 ? 2 : totalSeen >= 1 ? 1 : 0 %>
-            <h2><%= user.rank === 5 ? 'Rank 5: Lifer-timer' : user.rank === 4 ? 'Rank 4: Mid-Lifer' : user.rank === 3 ? 'Rank 3: Lifer Finder' : user.rank === 2 ? 'Rank 2: Lifer Seeker' : user.rank === 1 ? 'Rank 1: New Lifer' : 'Rank 0: No-Lifer' %></h2>
+            <img src="<%= user.rank === 5 ? '/images/rank-5-badge.jpg' : user.rank === 4 ? '/images/rank-4-badge.jpg' : user.rank === 3 ? '/images/rank-3-badge.jpg' : user.rank === 2 ? '/images/rank-2-badge.jpg' : user.rank === 1 ? '/images/rank-1-badge.jpg' : '/images/rank-0-badge.jpg' %>" width="100" height="100" alt="User Rank">
         </div>
         <div class="rest-of-profile">
             <h2><%= user.username %>'s Birds</h1>
