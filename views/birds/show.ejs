@@ -15,9 +15,11 @@
         <% if (bird.rating !== 'blank') { %>
             <img src="<%= bird.rating === '5' ? '/images/five-stars.png' : bird.rating === '4.5' ? '/images/four-half-stars.png' : bird.rating === '4' ? '/images/four-stars.png' : bird.rating === '3.5' ? '/images/three-half-stars.png' : bird.rating === '3' ? '/images/three-stars.png' : bird.rating === '2.5' ? '/images/two-half-stars.png' : bird.rating === '2' ? '/images/two-stars.png' : bird.rating === '1.5' ? '/images/one-half-stars.png' : bird.rating === '1' ? '/images/one-stars.png' : bird.rating === '0.5' ? '/images/half-star.png' : '/images/no-stars.png' %>" width="200" height="50" alt="User Rating"><p><%= bird.rating %> Star(s)</p>
         <% } %>
-        <%= bird.comments %><br><br>
+        <div class="comments-container">
+            <%= bird.comments %><br><br>
+        </div>
 
-        <a href="/users/<%= user._id %>/birds/<%= bird._id %>/edit">Edit this Bird</a><br><br>
+        <a href="/users/<%= user._id %>/birds/<%= bird._id %>/edit" id="edit-link">Edit this Bird</a><br><br>
         <form action="/users/<%= user._id %>/birds/<%= bird._id %>?_method=DELETE" method="POST">
             <button type="submit" class="delete-button">Delete this <%= bird.seenBird === true ? "Sighting" : "Attempt" %></button>
         </form>

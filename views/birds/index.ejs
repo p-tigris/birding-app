@@ -12,7 +12,7 @@
     <img src="/images/birds-flying.png" width="300" height="300" alt="Birds Flying" class="flying-birds">
     <div class="page-body main-page">
         <div class="user-data">
-            <a href="/users/<%= user._id %>/profile-pic"><small>(Change Profile Picture)</small></a>
+            <a href="/users/<%= user._id %>/profile-pic"><small id="pic-link">Change Profile Picture</small></a>
             <div class="username-and-pic">
                 <img src="<%= user.image %>" width="130" height ="130" alt="Profile Picture"><h1 class="page-title"><%= user.username %></h1>
             </div>       
@@ -27,13 +27,13 @@
         </div>
         <div class="rest-of-profile">
             <h2 class="page-title">Your Birds</h2>
-            <a href="/users/<%= user._id %>/birds/new">Add New Sighting</a>
+            <a href="/users/<%= user._id %>/birds/new" id="add-link">Add New Sighting</a>
             <% if (birds.length == 0) { %>
                 <p>Your life list is empty.</p>
             <% } else { %>
                 <ol>
                 <% birds.forEach((bird) => { %>
-                    <li><a href="/users/<%= user._id %>/birds/<%= bird._id %>"><%= bird.name %></a></li>
+                    <li class="user-birds"><a href="/users/<%= user._id %>/birds/<%= bird._id %>"><%= bird.name %></a></li>
                 <% }) %>
                 </ol>
             <% } %>

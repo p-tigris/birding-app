@@ -13,7 +13,7 @@
         <h1 class="page-title">Ubird Database</h1>
         <% birdDB.forEach((species) => { %>
             <% let populated = false %>
-            <h2><%= species %></h2>
+            <h2 class="species"><%= species %></h2>
             <% users.forEach((user) => { %>
                 <% user.birds.forEach((bird) => { %>
                     <% if (bird.name.toLowerCase() === species.toLowerCase()) { %>

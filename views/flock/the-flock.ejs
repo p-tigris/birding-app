@@ -11,12 +11,14 @@
     <img src="/images/birds-flying3.png" width="200" height="200" alt="Birds Flying" class="flying-birds">
     <div class="page-body main-page">
         <h1 class="page-title" id="flock-title">Ubird's Flock</h1>
-        <h2>Our Community</h2>
-        <ul>
-            <% users.forEach((user) => { %>
-                <li class="username-and-pic" id="user-list"><img src="<%= user.image %>" width="50" height ="50" alt="Profile Picture"><p><a href="the-flock/<%= user._id %>"><%= user.username %></a></p></li>
-                <% }) %>
-        </ul>
+        <div id="community-container">
+            <h2 class="sub-title">Our Community</h2>
+            <ul>
+                <% users.forEach((user) => { %>
+                    <li class="username-and-pic" id="user-list"><img src="<%= user.image %>" width="50" height ="50" alt="Profile Picture"><p><a href="the-flock/<%= user._id %>"><%= user.username %></a></p></li>
+                    <% }) %>
+            </ul>
+        </div>
     </div>
 </body>
 </html>

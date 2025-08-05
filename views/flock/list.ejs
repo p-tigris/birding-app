@@ -9,7 +9,18 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <div class="page-body user-list">
-        <h1 class="page-title">Birds that <%= user.username %> has seen or attempted:</h1>
+        <div class="user-container">
+            <img src="<%= user.image %>" width="100" height ="100" alt="Profile Picture"><h2 class="page-title"><%= user.username %></h2>
+            <% let totalSeen = 0 %>
+            <% birds.forEach((bird) => { %>
+                <% if (bird.seenBird) { %>
+                    <% totalSeen++ %>
+                <% } %>
+            <% }) %>
+            <% user.rank = totalSeen >= 100 ? 5 : totalSeen >= 50 ? 4 : totalSeen >= 25 ? 3 : totalSeen >= 10 ? 2 : totalSeen >= 1 ? 1 : 0 %>
+            <img src="<%= user.rank === 5 ? '/images/rank-5-badge.jpg' : user.rank === 4 ? '/images/rank-4-badge.jpg' : user.rank === 3 ? '/images/rank-3-badge.jpg' : user.rank === 2 ? '/images/rank-2-badge.jpg' : user.rank === 1 ? '/images/rank-1-badge.jpg' : '/images/rank-0-badge.jpg' %>" width="100" height="100" alt="User Rank">
+        </div>
+        <h1 class="page-title"><%= user.username %>'s Birds</h1>
 
         <% if (birds.length === 0) { %>
             <p>This user does not have any birds on their list yet.</p>

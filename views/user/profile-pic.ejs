@@ -9,11 +9,11 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <br>
-    <div class="page-body">
+    <div class="page-body pic-page">
         <img src="<%= user.image %>" alt="Profile Picture" width="200" height="200">
         <form action="/users/<%= user._id %>/profile-pic?_method=PUT" method="POST">
             <label for="profilePic">Image:</label> <small>(Must be URL with .png, .gif, .jpg or .jpeg extension)</small><br>
-            <input type="url" name="profilePic" id="profilePic" value="<%= user.image %>" required>
+            <input type="url" name="profilePic" id="profilePic" required>
             <button type="submit" id="profile-pic-edit-button">Update Profile Picture</button>
         </form>
         <br><br>
