@@ -228,7 +228,7 @@ const birds = [
     "Anhinga",
     "Darter",
     "African Spoonbill",
-    "Bald Eagle",
+    "Little Auk",
     "Hawk",
     "Falcon",
     "Kite",
