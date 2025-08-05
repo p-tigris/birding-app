@@ -1,4 +1,4 @@
-const birdData = [
+const birds = [
     "American Robin",
     "Bald Eagle",
     "Blue Jay",
@@ -275,4 +275,4 @@ const birdData = [
     "Yellow-crowned Night-Heron"
 ]
 
-module.exports = birdData;
+module.exports = birds;
