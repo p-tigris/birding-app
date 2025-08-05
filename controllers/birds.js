@@ -25,7 +25,7 @@ router.post('/', async (req, res) => {
         req.body.seenBird = req.body.seenBird === 'on';
 
         const currentUser = await User.findById(req.session.user._id);
-        const imageRegex = /^https?:\/\/.*\.(png|jpg|jpeg|gif)$/i;
+        const imageRegex = /^(?:https?:\/\/.*\.(?:png|jpg|jpeg|gif))?$/i;
 
         if (!imageRegex.test(req.body.image)) {
             return res.send("Invalid URL");
@@ -84,7 +84,7 @@ router.put('/:birdId/', async (req, res) => {
     try {
         req.body.seenBird = req.body.seenBird === 'on';
         const currentUser = await User.findById(req.session.user._id);
-        const imageRegex = /^https?:\/\/.*\.(png|jpg|jpeg|gif)$/i;
+        const imageRegex = /^(?:https?:\/\/.*\.(?:png|jpg|jpeg|gif))?$/i;
 
         if (!imageRegex.test(req.body.image)) {
             return res.send("Invalid URL");
