@@ -28,7 +28,9 @@
                 <ul>
                 <% birds.forEach((bird) => { %>
                     <li>
-                        <%= bird.name %><br>
+                        <div class="bird-name">
+                            <%= bird.name %><br>
+                        </div>
                         <% if (bird.image) { %>
                             <img src="<%= bird.image %>" alt="Bird Image" width="400" height="300">
                         <% } %>

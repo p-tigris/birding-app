@@ -319,6 +319,6 @@ small {
     font-weight: bold;
 }
 
-.user-birds {
+.user-birds, .bird-name {
     font-size: 150%;
 }
