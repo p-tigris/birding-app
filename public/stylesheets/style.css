@@ -322,3 +322,9 @@ small {
 .user-birds, .bird-name {
     font-size: 150%;
 }
+
+.user-encounter {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}

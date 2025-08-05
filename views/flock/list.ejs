@@ -32,7 +32,7 @@
                             <%= bird.name %><br>
                         </div>
                         <% if (bird.image) { %>
-                            <img src="<%= bird.image %>" alt="Bird Image" width="400" height="300">
+                            <img src="<%= bird.image %>" alt="Bird Image" width="400" height="400">
                         <% } %>
                         <p><%= bird.seenBird === true ? "Seen" : "Attempt" %> on <%= bird.date.toISOString().split('T')[0] %> in <%= bird.location %></p>
                         <% if (bird.rating !== 'blank') { %>

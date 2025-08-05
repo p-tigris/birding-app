@@ -17,8 +17,13 @@
             <% users.forEach((user) => { %>
                 <% user.birds.forEach((bird) => { %>
                     <% if (bird.name.toLowerCase() === species.toLowerCase()) { %>
-                        <% populated = true %>
-                        <p>Seen or attempted by <a href="the-flock/<%= user._id %>"><%= user.username %></a> at <%= bird.location %> on <%= bird.date.toISOString().split('T')[0] %></p>
+                        <div class="user-encounter">
+                            <% populated = true %>
+                            <p>Seen or attempted by <a href="the-flock/<%= user._id %>"><%= user.username %></a> at <%= bird.location %> on <%= bird.date.toISOString().split('T')[0] %>.</p>
+                            <% if (bird.rating !== 'blank') { %>
+                                <img src="<%= bird.rating === '5' ? '/images/five-stars.png' : bird.rating === '4.5' ? '/images/four-half-stars.png' : bird.rating === '4' ? '/images/four-stars.png' : bird.rating === '3.5' ? '/images/three-half-stars.png' : bird.rating === '3' ? '/images/three-stars.png' : bird.rating === '2.5' ? '/images/two-half-stars.png' : bird.rating === '2' ? '/images/two-stars.png' : bird.rating === '1.5' ? '/images/one-half-stars.png' : bird.rating === '1' ? '/images/one-stars.png' : bird.rating === '0.5' ? '/images/half-star.png' : '/images/no-stars.png' %>" width="40" height="10" alt="User Rating">
+                            <% } %>
+                        </div>
                     <% } %>
                 <% }) %>
             <% }) %>
