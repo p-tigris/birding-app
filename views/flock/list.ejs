@@ -8,8 +8,8 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <div class="page-body">
-        <h1>Birds that <%= user.username %> has seen or attempted:</h1>
+    <div class="page-body user-list">
+        <h1 class="page-title">Birds that <%= user.username %> has seen or attempted:</h1>
 
         <% if (birds.length === 0) { %>
             <p>This user does not have any birds on their list yet.</p>
@@ -22,6 +22,9 @@
                             <img src="<%= bird.image %>" alt="Bird Image" width="400" height="300">
                         <% } %>
                         <p><%= bird.seenBird === true ? "Seen" : "Attempt" %> on <%= bird.date.toISOString().split('T')[0] %> in <%= bird.location %></p>
+                        <% if (bird.rating !== 'blank') { %>
+                            <img src="<%= bird.rating === '5' ? '/images/five-stars.png' : bird.rating === '4.5' ? '/images/four-half-stars.png' : bird.rating === '4' ? '/images/four-stars.png' : bird.rating === '3.5' ? '/images/three-half-stars.png' : bird.rating === '3' ? '/images/three-stars.png' : bird.rating === '2.5' ? '/images/two-half-stars.png' : bird.rating === '2' ? '/images/two-stars.png' : bird.rating === '1.5' ? '/images/one-half-stars.png' : bird.rating === '1' ? '/images/one-stars.png' : bird.rating === '0.5' ? '/images/half-star.png' : '/images/no-stars.png' %>" width="200" height="50" alt="User Rating"><p><%= bird.rating %> Stars</p>
+                        <% } %>
                         <%= bird.comments %><br><br>
                     </li>
                     <hr>

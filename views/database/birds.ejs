@@ -9,8 +9,8 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <img src="/images/birds-flying2.png" width="200" height="200" alt="Birds Flying" class="flying-birds">
-    <div class="page-body main-page">
-        <h1>Our Bird Database</h1>
+    <div class="page-body main-page db-page">
+        <h1 class="page-title">Ubird Database</h1>
         <% birdDB.forEach((species) => { %>
             <% let populated = false %>
             <h2><%= species %></h2>

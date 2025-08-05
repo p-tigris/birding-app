@@ -1,4 +1,5 @@
 @import url('https://fonts.cdnfonts.com/css/uber-move-text');
+@import url('https://fonts.cdnfonts.com/css/bluebird');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 body {
@@ -50,6 +51,34 @@ body {
     flex-direction: column;
 }
 
+.db-page, .user-list {
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    width: 40%;
+}
+
+.user-list {
+    width: 45%;
+}
+
+#flock-title {
+    font-size: 500%;
+    margin-bottom: 0%;
+}
+
+.page-title {
+    font-family: 'Uber Move Text', 'Courier New', Courier, monospace;
+}
+
+.accounts-page {
+    background-color: #deb887;
+    width: 20%;
+    padding: 20px;
+    border: none;
+    border-radius: 20px;
+}
+
 .main-page {
     opacity: 0;
     animation: revealContent 1s forwards;
@@ -65,8 +94,26 @@ body {
 
 .credentials {
     display: flex;
-    align-items: center;
     flex-direction: column;
+}
+
+.accounts-button {
+    margin: 10px auto 0 auto;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 80%;
+    font-size: 120%;
+}
+
+.accounts-button:hover {
+    background-color: #06402b;
+}
+
+.accounts-button:active, #profile-pic-edit-button:active, .delete-button:active {
+    transform: translateY(5px);
 }
 
 img {
@@ -79,20 +126,22 @@ img {
     flex-direction: column;
     align-items: center;
     padding: 10px;
-    width: 20%;
+    width: 30%;
     border: none;
     border-radius: 20px;
 }
 
 .user-data {
     margin-top: 0;
-    background-color: rgba(181, 247, 255, 0.7);
+    /* background-color: rgba(181, 247, 255, 0.7); */
+    background-color: #fbedd2;
     gap: 10px;
 }
 
 .rest-of-profile {
     margin-top: 20px;
-    background-color: rgba(217, 224, 159, 0.7);
+    /* background-color: rgba(187, 213, 142, 0.7); */
+    background-color: #fbedd2;
 }
 
 .username-and-pic {
@@ -134,4 +183,65 @@ a {
 hr {
     border: groove;
     width: 500px;
+}
+
+.delete-button {
+    background-color: red;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    font-size: 120%;
+    margin-top: -10%;
+}
+
+.delete-button:hover {
+    background-color: darkred;
+}
+
+.add-edit-page {
+    background-color: #fbedd2;
+    border: none;
+    border-radius: 20px;
+    width: 45%;
+    padding-bottom: 20px;
+}
+
+#add-button, #edit-button {
+    background-color: blue;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    font-size: 120%;
+    margin-top: -10%;
+}
+
+.show-page {
+    background-color: #fbedd2;
+    border: none;
+    border-radius: 10px;
+    width: 40%;
+    padding-bottom: 10px;
+}
+
+#profile-pic-edit-button {
+    background-color: blue;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#profile-pic-edit-button:hover {
+    background-color: darkblue;
+}
+
+#profile-pic-edit-button:active {
+    transform: translateY(5px);
 }

@@ -8,8 +8,8 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <div class="page-body">
-        <h1>Edit <%= bird.name %></h1>
+    <div class="page-body add-edit-page">
+        <h1 class="page-title">Edit <%= bird.name %></h1>
         <form action="/users/<%= user._id %>/birds/<%= bird._id %>?_method=PUT" method="POST">
             <label for="name">Name:</label>
             <input type="text" name="name" id="name" value="<%= bird.name %>"/><br><br>
@@ -38,7 +38,7 @@
             </select><br><br>
             <label for="comments">Comments: </label> <small>(Max. 800 characters)</small><br>
             <textarea name="comments" id="comments" rows="10" cols="80" maxlength="800"><%= bird.comments %></textarea><br><br>
-            <button type="submit">Edit this Bird!</button>
+            <button type="submit" id="edit-button">Edit this Bird!</button>
         </form>
     </div>
 </body>

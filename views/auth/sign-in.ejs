@@ -8,14 +8,14 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <div class="page-body">
+    <div class="page-body accounts-page">
         <h1>Sign In</h1>
         <form action="/auth/sign-in" method="POST" class="credentials">
             <label for="username">Username:</label>
             <input type="text" name="username" id="username" />
             <label for="password">Password:</label>
             <input type="password" name="password" id="password" />
-            <button type="submit">Sign In</button>
+            <button type="submit" class="accounts-button">Sign In</button>
         </form>
     </div>
 </body>

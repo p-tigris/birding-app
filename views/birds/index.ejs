@@ -14,7 +14,7 @@
         <div class="user-data">
             <a href="/users/<%= user._id %>/profile-pic"><small>(Change Profile Picture)</small></a>
             <div class="username-and-pic">
-                <img src="<%= user.image %>" width="130" height ="130" alt="Profile Picture"><h1><%= user.username %></h1>
+                <img src="<%= user.image %>" width="130" height ="130" alt="Profile Picture"><h1 class="page-title"><%= user.username %></h1>
             </div>       
             <% let totalSeen = 0 %>
             <% birds.forEach((bird) => { %>
@@ -26,7 +26,7 @@
             <img src="<%= user.rank === 5 ? '/images/rank-5-badge.jpg' : user.rank === 4 ? '/images/rank-4-badge.jpg' : user.rank === 3 ? '/images/rank-3-badge.jpg' : user.rank === 2 ? '/images/rank-2-badge.jpg' : user.rank === 1 ? '/images/rank-1-badge.jpg' : '/images/rank-0-badge.jpg' %>" width="100" height="100" alt="User Rank">
         </div>
         <div class="rest-of-profile">
-            <h2><%= user.username %>'s Birds</h1>
+            <h2 class="page-title">Your Birds</h2>
             <a href="/users/<%= user._id %>/birds/new">Add New Sighting</a>
             <% if (birds.length == 0) { %>
                 <p>Your life list is empty.</p>
