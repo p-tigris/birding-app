@@ -45,13 +45,12 @@ nav {
     text-decoration: none;
 }
 
-.white-link {
+.white-link, #sign-up {
     color: white;
 }
 
 #sign-up {
-    background-color: #1588fc;
-    color: black;
+    background-color: #0373e2;
     padding: 10px;
     border: none;
     border-radius: 10px;
